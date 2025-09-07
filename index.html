@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Lunaris Mind - مساعد ذكاء اصطناعي</title>
+    <meta 
+      name="description" 
+      content="Lunaris Mind is a personal AI project offering natural conversation and an intelligent interactive experience, Designed to help individuals think, learn, and explore ideas efficiently and seamlessly."
+    />
+    <meta name="theme-color" content="#1B1B1B" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="manifest" href="manifest.json">
+  </head>
+  <body>
+    <div class="main-screen">
+      <div id="main-content" class="content">
+        
+        <!-- Header -->
+        <header id="main-header">
+          <button id="open-sidebar-btn" class="header-btn">&#9776;</button>
+
+          <div class="header-center-content">
+            <div id="new-chat-header" class="header-view active-view">
+              <div class="header-title">
+                <h1>Lunaris Mind</h1>
+              </div>
+            </div>
+            <div id="active-chat-header" class="header-view">
+              <div class="active-chat-title">
+                <h3>Lunaris Mind</h3>
+              </div>
+            </div>
+          </div>
+     
+         <div class="header-right-buttons">
+           <button id="header-new-chat-btn" class="header-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg>
+            </button>
+            <div class="options-menu-container">
+              <button id="options-menu-btn" class="header-btn">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
+              </button>
+              <div id="options-dropdown" class="options-dropdown">
+                <div class="dropdown-item chat-title-display">Greeting exchange</div>
+                 <a href="#" class="dropdown-item share-btn"><span class="icon">&#128279;</span> المشاركة </a>
+                 <a href="#" class="dropdown-item rename-btn"><span class="icon">&#9998;</span> إعادة التسمية</a>
+                 <a href="#" class="dropdown-item archive-btn"><span class="icon">&#128451;</span> الأرشفة</a>
+                 <a href="#" class="dropdown-item danger-text delete-btn"><span class="icon">&#128465;</span> الحذف</a>
+                 <a href="#" class="dropdown-item report-btn"><span class="icon">&#128681;</span> الإبلاغ</a>
+               </div>
+             </div>
+          </div>
+        </header>
+
+        <!-- Sidebar -->
+        <nav id="sidebar" class="sidebar">
+          <div class="sidebar-header">
+            <div class="sidebar-search-container">
+              <button id="sidebar-new-chat-btn" class="header-btn">
+                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                   <path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"></path>
+                   </svg>
+              </button>
+              <input type="search" class="sidebar-search-input" placeholder="بحث....">
+            </div>
+          </div>
+          <div class="sidebar-menu">
+            <a href="#" id="menu-new-chat-btn" class="menu-item">
+              <span class="menu-icon">📝</span>
+              <span class="menu-text">محادثة جديدة</span>
+            </a>
+            <a href="library.html" class="menu-item">
+              <span class="menu-icon">🎨</span>
+              <span class="menu-text">المكتبة</span>
+            </a>
+            <a href="projects.html" class="menu-item">
+              <span class="menu-icon">📂</span>
+              <span class="menu-text">إضافة مشروع</span>
+            </a>
+          </div>
+          <div id="chat-history-list" class="chat-history-container">
+            
+          </div>
+          <div class="sidebar-footer">
+            <div class="footer-content">
+              <a href="profile.html" class="user-profile-link">
+                <img src="images/default-avatar-small.png" alt="صورة المستخدم" class="sidebar-avatar">
+                <span>اسم المستخدم</span>
+              </a>
+              <a href="settings.html" class="settings-btn">
+                <span>&#9881;</span>
+              </a>
+            </div>
+            <button id="open-auth-modal-btn" style="margin-top: 15px; width: 100%;">تسجيل الدخول</button>
+          </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main>
+          <div id="welcome-screen" class="welcome-screen">
+              <img src="images/lunaris-avatar.png" alt="AI Avatar" class="welcome-avatar">
+              <h2>كيف يمكنني مساعدتك اليوم؟</h2>
+              <div class="suggestion-pills">
+                <div class="pill">
+                  <span class="pill-text">اقترح افكار جديدة</span>
+                  <span class="pill-icon">💡</span>
+                </div>
+                <div class="pill">
+                  <span class="pill-text">ساعدني على التفكير</span>
+                  <span class="pill-icon">📝</span>
+                </div>
+                <div class="pill">
+                  <span class="pill-text">اجب على اسئلتي</span>
+                  <span class="pill-icon">❓</span>
+                </div>
+            </div>
+          </div>
+          <div id="chat-area" class="chat-area">
+           </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="chat-footer">
+          <div class="input-bar">
+            <input type="text" id="message-input" placeholder="اكتب رسالتك هنا...">
+            <button type="button" id="mic-or-send-btn">
+              <span id="mic-icon" class="active-icon">
+                <!-- Mic Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+                  <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                  <line x1="12" y1="19" x2="12" y2="22"></line>
+                </svg>
+              </span>
+              <span id="send-icon" class="icon-hidden">
+                <!-- Send Icon -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" 
+                     viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="22" y1="2" x2="11" y2="13"></line>
+                  <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                </svg>
+              </span>
+            </button>
+          </div>
+          <div class="footer-credits">
+            <p>© 2025 Lunaris Mind - صنع بحب وفضول من قبل Aezo...</p>
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="auth-modal" class="modal-overlay">
+      <div class="modal-content">
+        <button id="close-modal-btn" class="close-button">&times;</button>
+
+        <!-- Login View -->
+        <div id="login-view">
+          <h2>تسجيل الدخول</h2>
+          <form>
+            <div class="form-group">
+              <label for="login-email">البريد الإلكتروني</label>
+              <input type="email" id="login-email" placeholder="example@email.com" required>
+            </div>
+            <div class="form-group">
+              <label for="login-password">كلمة المرور</label>
+              <input type="password" id="login-password" placeholder="********" required minlength="8" maxlength="25">
+            </div>
+            <button type="submit">دخول</button>
+          </form>
+          <p class="switch-form-text">
+            <a href="#" id="goto-signup-link">ليس لديك حساب؟ أنشئ حساباً جديداً</a>
+          </p>
+        </div>
+
+        <!-- Signup View -->
+        <div id="signup-view" class="view-hidden">
+          <h2>إنشاء حساب جديد</h2>
+          <form>
+            <div class="form-group">
+              <label for="signup-name">الإسم</label>
+              <input type="text" id="signup-name" placeholder="اسمك الكامل" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-email">البريد الإلكتروني</label>
+              <input type="email" id="signup-email" placeholder="example@gmail.com" required>
+            </div>
+            <div class="form-group">
+              <label for="signup-password">إنشاء كلمة المرور</label>
+              <input type="password" id="signup-password" placeholder="يرجى إنشاء كلمة مرور قوية" required minlength="8" maxlength="25">
+            </div>
+            <button type="submit">إنشاء حساب</button>
+          </form>
+          <p class="switch-form-text">
+            <a href="#" id="goto-login-link">لديك حساب بالفعل؟ سجل الدخول</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toast -->
+    <div id="toast-notification" class="toast">
+      انت بالفعل في محادثة جديدة
+    </div>
+
+    <!-- Script -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
